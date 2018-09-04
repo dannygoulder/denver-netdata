@@ -27,7 +27,7 @@
 # * `install_method`
 #   Type:    String
 #   Default: curl
-#   Desc:    Method to use to install netdata.  Options are 'curl' (default) and 'pkg' (if using pkg, you must have the package available)
+#   Desc:    Method to use to install netdata.  Options are 'curl' (default) and 'pkg'.  You need to take care of making the package available yourself.
 #
 # * `config_dir`
 #   Type:    String
