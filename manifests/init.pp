@@ -24,6 +24,11 @@
 #   Default: /opt/netdata
 #   Desc:    Path in which to deploy netdata locally.
 #
+# * `install_method`
+#   Type:    String
+#   Default: curl
+#   Desc:    Method to use to install netdata.  Options are 'curl' (default) and 'pkg' (if using pkg, you must have the package available)
+#
 # * `config_dir`
 #   Type:    String
 #   Default: $::netdata::install_dir/etc/netdata
@@ -192,6 +197,7 @@ class netdata (
   Optional[String]                                $hostname             = undef,
   Integer                                         $history              = 3600,
   Stdlib::Absolutepath                            $install_dir          = '/opt/netdata',
+  Enum['curl', 'pkg']                             $install_method       = 'curl',
   Stdlib::Absolutepath                            $config_dir           = '/etc/netdata',
   Stdlib::Absolutepath                            $plugins_dir          = '/usr/libexec/netdata/plugins.d',
   Stdlib::Absolutepath                            $web_files_dir        = '/usr/share/netdata/web',
