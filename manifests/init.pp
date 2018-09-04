@@ -196,7 +196,7 @@ class netdata (
   String                                          $version              = 'latest',
   Optional[String]                                $hostname             = undef,
   Integer                                         $history              = 3600,
-  Stdlib::Absolutepath                            $install_dir          = '/opt/netdata',
+  Optional[Stdlib::Absolutepath]                  $install_dir          = $::netdata::params::install_dir
   Enum['curl', 'pkg']                             $install_method       = 'curl',
   Stdlib::Absolutepath                            $config_dir           = '/etc/netdata',
   Stdlib::Absolutepath                            $plugins_dir          = '/usr/libexec/netdata/plugins.d',
@@ -215,7 +215,7 @@ class netdata (
   Enum['save', 'map', 'ram','none']               $memory_mode          = 'save',
   Enum['none','single-threaded','multi-threaded'] $web_mode             = 'multi-threaded',
   Integer                                         $update_every         = 1,
-  String                                          $web_user             = 'netdata',
+  String                                          $web_user             = $::netdata::params::web_user,
   String                                          $web_group            = 'netdata',
   String                                          $user                 = 'netdata',
   String                                          $group                = 'netdata',
