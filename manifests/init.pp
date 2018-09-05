@@ -17,7 +17,7 @@
 # * `history`
 #   Type:    Integer
 #   Default: 3600
-#   Desc:    The number of entries the netdata daemon will by default keep in memory for each chart dimension. 
+#   Desc:    The number of entries the netdata daemon will by default keep in memory for each chart dimension.
 #
 # * `install_dir`
 #   Type:    String
@@ -27,7 +27,12 @@
 # * `install_method`
 #   Type:    String
 #   Default: curl
-#   Desc:    Method to use to install netdata.  Options are 'curl' (default) and 'pkg'.  You need to take care of making the package available yourself.
+#   Desc:    Method to use to install netdata.  Options are 'curl' (default) and 'pkg'.
+#
+# * `package_names`
+#   Type:    Array
+#   Default: ['netdata']
+#   Desc:    Names of package(s) used to install netdata.  You need to take care of building packages and adding them to repos yourself
 #
 # * `config_dir`
 #   Type:    String
