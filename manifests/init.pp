@@ -196,8 +196,9 @@ class netdata (
   String                                          $version              = 'latest',
   Optional[String]                                $hostname             = undef,
   Integer                                         $history              = 3600,
-  Optional[Stdlib::Absolutepath]                  $install_dir          = $::netdata::params::install_dir
+  Optional[Stdlib::Absolutepath]                  $install_dir          = $::netdata::params::install_dir,
   Enum['curl', 'pkg']                             $install_method       = 'curl',
+  Array[String]                                   $package_names        = ['netdata'],
   Stdlib::Absolutepath                            $config_dir           = '/etc/netdata',
   Stdlib::Absolutepath                            $plugins_dir          = '/usr/libexec/netdata/plugins.d',
   Stdlib::Absolutepath                            $web_files_dir        = '/usr/share/netdata/web',
